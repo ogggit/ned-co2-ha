@@ -1,0 +1,36 @@
+{
+  "title": "NED CO₂ intensiteit",
+  "config": {
+    "step": {
+      "user": {
+        "title": "NED CO₂ – instellingen",
+        "description": "Vul je API‑key en parameters in.",
+        "data": {
+          "api_key": "API‑key (X-AUTH-TOKEN)",
+          "point_id": "Point (regio; 0 = NL totaal)",
+          "type_id": "Type (27 = elektriciteitsmix)",
+          "activity_id": "Activity (1 = CO₂ emissiefactor)",
+          "classification_id": "Classificatie (1=forecast, 2=actueel, 3=backcast)",
+          "granularity_id": "Granulariteit (4=15m, 5=uur, 6=dag)",
+          "granularity_timezone_id": "Granulariteits‑tijdzone (1=CET)",
+          "lookahead_hours": "Vooruitkijkvenster (uren)",
+          "update_interval_minutes": "Update‑interval (minuten)",
+          "unit": "Eenheid (g/kWh of kg/kWh)"
+        }
+      }
+    },
+    "error": {
+      "auth": "Ongeldige API‑key of geen toegang",
+      "cannot_connect": "Kon de NED API niet bereiken",
+      "unknown": "Onbekende fout"
+    }
+  },
+  "options": {
+    "step": {
+      "edit": {
+        "title": "NED CO₂ – opties wijzigen",
+        "description": "Pas parameters aan; we valideren met een proefaanvraag."
+      }
+    }
+  }
+}

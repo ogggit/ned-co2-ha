@@ -1,0 +1,36 @@
+{
+  "title": "NED CO₂ intensity",
+  "config": {
+    "step": {
+      "user": {
+        "title": "NED CO₂ – configuration",
+        "description": "Enter your API key and parameters.",
+        "data": {
+          "api_key": "API key (X-AUTH-TOKEN)",
+          "point_id": "Point (region; 0 = NL total)",
+          "type_id": "Type (27 = electricity mix)",
+          "activity_id": "Activity (1 = CO₂ emission factor)",
+          "classification_id": "Classification (1=forecast, 2=actual, 3=backcast)",
+          "granularity_id": "Granularity (4=15m, 5=hour, 6=day)",
+          "granularity_timezone_id": "Granularity timezone (1=CET)",
+          "lookahead_hours": "Look‑ahead window (hours)",
+          "update_interval_minutes": "Update interval (minutes)",
+          "unit": "Unit (g/kWh or kg/kWh)"
+        }
+      }
+    },
+    "error": {
+      "auth": "Invalid API key or no access",
+      "cannot_connect": "Could not reach the NED API",
+      "unknown": "Unknown error"
+    }
+  },
+  "options": {
+    "step": {
+      "edit": {
+        "title": "NED CO₂ – edit options",
+        "description": "Adjust parameters; a test request will validate the input."
+      }
+    }
+  }
+}
