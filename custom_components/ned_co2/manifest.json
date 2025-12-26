@@ -3,13 +3,12 @@
   "name": "NED CO₂ intensiteit",
   "version": "1.0.0",
   "documentation": "https://ned.nl/nl/handleiding-api",
-  "issue_tracker": "https://github.com/",
-  "codeowners": [
-    "@your-github"
-  ],
+  "issue_tracker": "https://github.com/ogggit/ned-co2-ha/issues",
+  "codeowners": ["@ogggit"],
+  
+  "config_flow": true,
+  "integration_type": "service",
   "iot_class": "cloud_polling",
   "requirements": [],
-  "loggers": [
-    "custom_components.ned_co2"
-  ]
+  "loggers": ["custom_components.ned_co2"]
 }

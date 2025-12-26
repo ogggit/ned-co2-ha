@@ -7,6 +7,7 @@ from aiohttp import ClientSession
 from homeassistant import config_entries
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers import aiohttp_client
+from homeassistant.config_entries import Configflow, optionsflowwithreload
 
 from .const import (
     DOMAIN, DEFAULTS,
@@ -43,6 +44,10 @@ async def _validate_api(hass: HomeAssistant, data: dict[str, Any]) -> None:
 
 class NedCo2ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
+    @staticmethod
+    @callback
+    def async_get_options_flow(config_entry):
+        return NedCo2OptionsFlowHandler()
 
     async def async_step_user(self, user_input: dict[str, Any] | None = None):
         errors: dict[str, str] = {}
@@ -77,9 +82,9 @@ class NedCo2ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     async def async_step_options(self, user_input: dict[str, Any] | None = None):
         return await self.async_step_user(user_input)
 
-class NedCo2OptionsFlowHandler(config_entries.OptionsFlow):
-    def __init__(self, config_entry: config_entries.ConfigEntry):
-        self.config_entry = config_entry
+class NedCo2OptionsFlowHandler(optionsflowwithreload):
+    def __init__(self):
+        pass
 
     async def async_step_init(self, user_input: dict[str, Any] | None = None):
         return await self.async_step_edit(user_input)
