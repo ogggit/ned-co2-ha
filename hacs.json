@@ -1,4 +1,10 @@
 {
   "name": "NED CO₂ intensiteit",
+  "render_readme": true,
+  "content_in_root": false,
+  "domains": ["sensor"],
+  "zip_release": false
+}{
+  "name": "NED CO₂ intensiteit",
   "render_readme": true
 }
