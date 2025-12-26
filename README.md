@@ -1,5 +1,7 @@
 # NED CO₂ intensiteit (Home Assistant custom integration)
 
+This software is vibecoded and provided as is. Below more information in Dutch. 
+
 Deze integratie haalt de **CO₂‑emissiefactor van de Nederlandse elektriciteitsmix** op uit het Nationaal Energie Dashboard (**NED**) en presenteert die in Home Assistant als sensoren. De emissiefactor wordt door de NED‑API geleverd als **kg/kWh** en wordt in de sensor (standaard) omgerekend naar **g/kWh**.
 
 - API‑endpoint: `/v1/utilizations` (parameters: `point`, `type`, `activity`, `classification`, `granularity`, `granularitytimezone`, `validfrom[...]`)
