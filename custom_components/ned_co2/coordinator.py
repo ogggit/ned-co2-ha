@@ -56,7 +56,8 @@ class NedCo2Coordinator(DataUpdateCoordinator[dict[str, Any]]):
                     resp.raise_for_status()
                     data = await resp.json()
         except ClientResponseError as e:  # pragma: no cover
-            raise UpdateFailed(f"HTTP error: {e.status} {e.message}") from e
+            status = getattr(e, "status", "")
+            raise UpdateFailed(f"HTTP error: {status} {e}") from e
         except Exception as e:  # noqa: BLE001
             raise UpdateFailed(f"Unexpected error: {e}") from e
 
