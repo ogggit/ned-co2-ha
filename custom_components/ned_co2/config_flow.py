@@ -42,7 +42,7 @@ async def _validate_api(hass: HomeAssistant, data: dict[str, Any]) -> None:
         if resp.status >= 400:
             raise ValueError(f"http_{resp.status}")
 
-class NedCo2ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class NedCo2ConfigFlow(ConfigFlow, domain=DOMAIN):
     VERSION = 1
     @staticmethod
     @callback
